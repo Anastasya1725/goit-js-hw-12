@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla App Template</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+   
+  
+      <form class="form" id="search-form">
+        <input type="text" id="search-query" placeholder="Search images..." />
+        <button type="submit">Search</button>
+      </form>
+      
+      <div class="loader">Loading images, please wait...</div>
+
+  
+      <div class="gallery gallery-item info"></div>
+      
+
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
+  </body>
+</html>
