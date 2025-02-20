@@ -42,7 +42,7 @@ width: 272px;
 height: 40px;
 }
 
-button {
+.search-btn{
   border-radius: 8px;
 padding: 8px 16px;
 width: 75px;
@@ -62,7 +62,7 @@ letter-spacing: 0.04em;
 color: #fff;
 }
 
-button:hover{
+.search-btn:hover{
   background: #6c8cff;
 }
 
@@ -107,6 +107,30 @@ height: 48px;
 display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.load-more {
+  display: block; 
+  margin: 20px auto;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background: #4e75ff;
+  
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 
