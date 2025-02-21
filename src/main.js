@@ -16,41 +16,44 @@ form.addEventListener('submit', async (event) => {
   searchQuery = document.querySelector('#search-query').value.trim();
 
   if (searchQuery === '') {
-    iziToast.error({
-      title: 'Error',
-      message: 'Please enter a search query!',
-    });
-    return;
+      iziToast.error({
+          title: 'Error',
+          message: 'Please enter a search query!',
+      });
+      return;
   }
 
   currentPage = 1;
   showLoader(true);
-  toggleLoadMoreButton(false);
+  toggleLoadMoreButton(false); 
+
+  document.querySelector('.gallery').innerHTML = '';
 
   try {
-    const data = await fetchImages(searchQuery, currentPage);
-    totalImages = data.totalHits;
+      const data = await fetchImages(searchQuery, currentPage);
+      totalImages = data.totalHits;
 
-    renderGallery(data.hits, true);
+      renderGallery(data.hits, true);
 
-    if (data.hits.length > 0 && currentPage * perPage < totalImages) {
-      toggleLoadMoreButton(true);
-    } else {
-      toggleLoadMoreButton(false);
-      iziToast.info({
-        title: 'End of Results',
-        message: "We're sorry, but you've reached the end of search results.",
-      });
-    }
+      if (data.hits.length > 0 && currentPage * perPage < totalImages) {
+          toggleLoadMoreButton(true);
+      } else {
+          toggleLoadMoreButton(false);
+          iziToast.info({
+              title: 'End of Results',
+              message: "We're sorry, but you've reached the end of search results.",
+          });
+      }
   } catch (error) {
-    iziToast.error({
-      title: 'Error',
-      message: 'Something went wrong. Please try again later.',
-    });
+      iziToast.error({
+          title: 'Error',
+          message: 'Something went wrong. Please try again later.',
+      });
   } finally {
-    showLoader(false);
+      showLoader(false);
   }
 });
+
 
 
 loadMoreButton.addEventListener('click', async () => {
